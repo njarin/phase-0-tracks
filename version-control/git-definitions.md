@@ -13,3 +13,5 @@ A commit is a save point in the timeline of the version control. A commit saves 
 
 * What is a merge conflict?
 A merge conflict happens when some code is trying to occupy the same space or is directing the project toward two or more things that can not be done at the same time. 
+
+*MINOR EDIT HERE
