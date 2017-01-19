@@ -15,24 +15,16 @@ cite {
   
 }
 
-section {
-  display: inline-block;
-  vertical-align: top;
-  width: 20%;
-
-}
-
-main {
-  width: 75%;
-  display: inline-block;
-  vertical-align: top;
-}
-
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
 but it's optional! */
 img {
   width: 100%;
+}
+
+body {
+  min-width: 300px;
+  max-width: 960px;
 }
 
 figure {
@@ -45,25 +37,43 @@ figcaption {
   text-align: right;
 }
 
-body {
-  max-width: 960px;
-  min-width: 300px;
+
+#external-links {
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+
 }
 
-@media only screen and (max-width: 800px) {
+main {
+  width: 75%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*Change caption to smaller size on tablet*/
+@media screen and (max-width: 768px) {
   figcaption {
     font-size: .5em;
   }
 }
 
-@media only screen and (max-width: 400px) {
-  section {
-   display: block;
+/*Move sidebar to bottom on tablet*/
+@media screen and (max-width: 768px) {
+  main {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  #external-links {
+    display: block;
+    position: relative;
+    width: 100%;
   }
 }
 
-/*
-@media only screen and (max-width: 800px) {
+
+/*@media screen and (max-width: 800px) {
   body {
     background-color: hotpink;
   }
