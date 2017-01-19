@@ -49,3 +49,23 @@ body {
   max-width: 960px;
   min-width: 300px;
 }
+
+@media only screen and (max-width: 800px) {
+  figcaption {
+    font-size: .5em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  section {
+   display: block;
+  }
+}
+
+/*
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: hotpink;
+  }
+}
+*/
