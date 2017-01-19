@@ -12,6 +12,7 @@ cite {
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+  
 }
 
 /* you're welcome to edit the
@@ -19,6 +20,11 @@ image, figure, and figcaption CSS if you'd like,
 but it's optional! */
 img {
   width: 100%;
+}
+
+body {
+  min-width: 300px;
+  max-width: 960px;
 }
 
 figure {
@@ -30,3 +36,46 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+
+#external-links {
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+
+}
+
+main {
+  width: 75%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*Change caption to smaller size on tablet*/
+@media screen and (max-width: 768px) {
+  figcaption {
+    font-size: .5em;
+  }
+}
+
+/*Move sidebar to bottom on tablet*/
+@media screen and (max-width: 768px) {
+  main {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  #external-links {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+}
+
+
+/*@media screen and (max-width: 800px) {
+  body {
+    background-color: hotpink;
+  }
+}
+*/
