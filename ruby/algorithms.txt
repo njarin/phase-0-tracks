@@ -1,22 +1,33 @@
 # Robot to Elevator pseudocode 
 
 - For a trip downstairs from my penthouse apartment: 
+	- To walk: Use motor functions in lower extremities to propel yourself laterally at a decibel level no higher than 0db, a height off the ground no higher than 20cm, and a lateral speed no faster than 3mph
+		- Lift foot, move forward, set foot down
+		- Repeat with other foot
+		- Use alternating pattern to propel yourself forward
 	- Until you have left the apartment, look for front door
 		- Scan room you are in
 		- If no front door is present, then leave room
+			- To leave room, walk through doorway to next room
 			- Scan room for front door
 		- Else, open front door 
 	- Walk through front door
 	- Close front door behind you
-	- Until you reach elevator call button, walk down hallway
-		- Push elevator call button
-		- Move a couple steps away from call button
-		- Wait for elevator doors to open
+	- Until you are close enough to touch elevator call button, walk along hallway
+		- Lift upper extremity
+		- Fold outer most extremity into a form where only one digit is extended
+		- Press single digit into elevator button on panel with no more than a half-pound PSI for no longer than .5 seconds
+		- Walk a couple steps away from call button
+		- Orient towards elevator door
+		- Cease motor function until elevator doors to open
+	- When elevator doors open, walk through them into elevator
+	- Visually find button panel
+		- Scan for button with “1” on it
+	- Press 1 in same way that elevator call button was pressed, ignore any other buttons on panel
+	- Move to portion of elevator floor furthest from other passengers, if they are present
+	- Cease motor functions until elevator doors open again
+	- When elevator doors open… 
+		- If there are other passengers, wait for them to leave first
+		- Walk through door
 
-
-	- Go to elevator
-	- Get in elevator
-	- Push 1, ignore other buttons
-	- Move to portion of elevator furthest from other passengers
-	- Leave elevator
 
