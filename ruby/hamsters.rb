@@ -5,7 +5,7 @@
 
 puts "Is hamster wearing a nametag? (Yes/No)"
 nametag = gets.chomp
-if nametag == "yes"
+if nametag.downcase == "yes"
 	puts "What name is on the nametag?"
 	name = gets.chomp
 else puts "Name the hamster"
@@ -23,18 +23,31 @@ until loudness.to_i == 1 or loudness.to_i == 2 or loudness.to_i == 3 or loudness
 	loudness = gets.chomp
 end
 
+
 # What fur color? 
 puts "Is the fur color black, white, brown, orange, or mixed?"
 fur_color = gets.chomp
-until fur_color == "black" or fur_color == "white" or fur_color == "brown" or fur_color == "orange" or fur_color == "mixed" 
+until fur_color.downcase == "black" or fur_color.downcase == "white" or fur_color.downcase == "brown" or fur_color.downcase == "orange" or fur_color.downcase == "mixed" 
 	puts "I'm sorry, give me one of the colors I listed as options"	
 	fur_color = gets.chomp	
 end
 
 
-
 # Is this a good candidate for adoption?
 
-# Estimated age of hamster
+puts "Is this hamster a good candidate for adoption? (Yes/No)"
+adoption = gets.chomp
+until adoption.downcase == "yes" or adoption.downcase == "no"
+	puts "I'm sorry, give me a yes or no answer"
+	adoption = gets.chomp
+end
 
-# define nil
+# Estimated age of hamster
+puts "How many years old do you think this hamster is? Put 0 if under 1 year old. Leave blank if unsure."
+age = gets.chomp
+# Make sure that input is an integer or nil
+until age.to_i == 0 or age.to_i == 1 or age.to_i == 2 or age.to_i == 3 or age.to_i == 4 or age.to_i == 5 or age == nil
+	puts "Please enter a year age between 0 and 5"
+	age = gets.chomp
+end
+
