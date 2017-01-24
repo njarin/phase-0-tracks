@@ -22,16 +22,15 @@ until loudness.to_i == 1 or loudness.to_i == 2 or loudness.to_i == 3 or loudness
 	puts puts "I'm sorry, give me a number on a scale of 1-10"
 	loudness = gets.chomp
 end
+loudness = loudness.to_i
 
-
-# What fur color? 
+# What fur color?
 puts "Is the fur color black, white, brown, orange, or mixed?"
 fur_color = gets.chomp
-until fur_color.downcase == "black" or fur_color.downcase == "white" or fur_color.downcase == "brown" or fur_color.downcase == "orange" or fur_color.downcase == "mixed" 
-	puts "I'm sorry, give me one of the colors I listed as options"	
-	fur_color = gets.chomp	
+until fur_color.downcase == "black" or fur_color.downcase == "white" or fur_color.downcase == "brown" or fur_color.downcase == "orange" or fur_color.downcase == "mixed"
+	puts "I'm sorry, give me one of the colors I listed as options"
+	fur_color = gets.chomp
 end
-
 
 # Is this a good candidate for adoption?
 
@@ -50,4 +49,11 @@ until age.to_i == 0 or age.to_i == 1 or age.to_i == 2 or age.to_i == 3 or age.to
 	puts "Please enter a year age between 0 and 5"
 	age = gets.chomp
 end
+age = age.to_i
 
+puts "Thanks for entering the data on this hamster!"
+puts "Name: #{name}"
+puts "Age: #{age}"
+puts "Color: #{fur_color}"
+puts "Loudness: #{loudness}"
+puts "Good candidate for adoption? #{adoption.upcase}"
