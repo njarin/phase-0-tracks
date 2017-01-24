@@ -1,0 +1,22 @@
+# Robot to Elevator pseudocode 
+
+- For a trip downstairs from my penthouse apartment: 
+	- Until you have left the apartment, look for front door
+		- Scan room you are in
+		- If no front door is present, then leave room
+			- Scan room for front door
+		- Else, open front door 
+	- Walk through front door
+	- Close front door behind you
+	- Until you reach elevator call button, walk down hallway
+		- Push elevator call button
+		- Move a couple steps away from call button
+		- Wait for elevator doors to open
+
+
+	- Go to elevator
+	- Get in elevator
+	- Push 1, ignore other buttons
+	- Move to portion of elevator furthest from other passengers
+	- Leave elevator
+
