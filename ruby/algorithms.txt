@@ -1,22 +1,73 @@
 # Robot to Elevator pseudocode 
 
 - For a trip downstairs from my penthouse apartment: 
+	- To walk: Use motor functions in lower extremities to propel yourself laterally at a decibel level no higher than 0db, a height off the ground no higher than 20cm, and a lateral speed no faster than 3mph
+		- Lift foot, move forward, set foot down
+		- Repeat with other foot
+		- Use alternating pattern to propel yourself forward
 	- Until you have left the apartment, look for front door
 		- Scan room you are in
 		- If no front door is present, then leave room
+			- To leave room, walk through doorway to next room
 			- Scan room for front door
 		- Else, open front door 
 	- Walk through front door
 	- Close front door behind you
-	- Until you reach elevator call button, walk down hallway
-		- Push elevator call button
-		- Move a couple steps away from call button
-		- Wait for elevator doors to open
+	- Until you are close enough to touch elevator call button, walk along hallway
+		- Lift upper extremity
+		- Fold outer most extremity into a form where only one digit is extended
+		- Press single digit into elevator button on panel with no more than a half-pound PSI for no longer than .5 seconds
+		- Walk a couple steps away from call button
+		- Orient towards elevator door
+		- Cease motor function until elevator doors to open
+	- When elevator doors open, walk through them into elevator
+	- Visually find button panel
+		- Scan for button with “1” on it
+	- Press 1 in same way that elevator call button was pressed, ignore any other buttons on panel
+	- Move to portion of elevator floor furthest from other passengers, if they are present
+	- Cease motor functions until elevator doors open again
+	- When elevator doors open… 
+		- If there are other passengers, wait for them to leave first
+		- Walk through door
 
 
-	- Go to elevator
-	- Get in elevator
-	- Push 1, ignore other buttons
-	- Move to portion of elevator furthest from other passengers
-	- Leave elevator
+# Pour a glass of water
+- To walk: Use motor functions in lower extremities to propel yourself laterally at a decibel level no higher than 0db, a height off the ground no higher than 20cm, and a lateral speed no faster than 3mph
+	- Lift foot, move forward, set foot down
+	- Repeat with other foot		
+	- Use alternating pattern to propel yourself forward
+- Walk to the kitchen
+	- Visually scan room you are in for a refrigerator 
+	- If no refrigerator, walk out of room
+	- Do not return to room that has already been scanned for refrigerator
+- When you reach the kitchen, walk to within arm’s reach of the refrigerator
+- Lift arm 
+- Grasp refrigerator handle on front of refrigerator
+- Pull to open refrigerator
+- Release handle
+- Scan inside refrigerator for water jug
+- Extend arm toward water jug
+- Grasp water jug
+- While grasping water jug, retract arm closer to body
+- Walk to within one inch of kitchen counter
+- Open cabinet on the right, ignore other cabinets
+- Extend other arm into cabinet
+- Grasp water drinking vessel 
+- Retract arm with drinking vessel outside of cabinet
+- Slowly lower arm until water drinking vessel is stably on kitchen counter
+- Position arm with water jug until it is laterally aligned with drinking vessel
+- Pour water
+	- Tip over water jug while maintaining grasp on it
+	- Align rim of jug with opening at the top of drinking vessel
+	- Tip jug no more than 100 degrees from upright position
+	- Return jug to upright position once drinking vessel is at least 60% filled with water
+- Walk to refrigerator
+- Extend arm with empty hand toward refrigerator door handle 
+- Grasp refrigerator door handle
+- Pull handle two feet outward
+- Extend arm with water jug into top portion of refrigerator
+- Slowly lower arm until water jug is stably on refrigerator shelf
+- Release jug
+- Retract arm
+
 
