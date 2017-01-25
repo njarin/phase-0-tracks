@@ -61,7 +61,14 @@ if age_math == 0
 else age_math = false
 end
 
+vamp_identity = "Results inconclusive on whether #{name} is a vampire."
+if age_math && (garlic_bread || insurance)
+	vamp_identity = "#{name} is probably not a vampire"
+end
 
-vamp_identity = "Results inconclusive"
-#if age_math && ()
-#	vamp_identity = "Probably not a vampire"
+
+
+
+
+
+puts vamp_identity
