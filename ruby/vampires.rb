@@ -79,22 +79,19 @@ end
 
 #Clear allergies value before asking about it
 allergies = "none"
-if allergies == "sunshine"
-	allergies = 0
-end
 
 # Ask about allergies
 puts "Please list any allergies you have. Hit return after each one. Enter 'Done' when done listing."
 allergies = gets.chomp
-until allergies.downcase == "done" || vamp_identity == "#{name} is very likely a vampire."
+until (allergies.downcase == "done") || (allergies.downcase == "sunshine")
 	allergies = gets.chomp
-	if allergies.downcase == "sunshine"
-		vamp_identity = "#{name} is very likely a vampire."
-	end
+end
+if allergies.downcase == "sunshine"
+	vamp_identity = "#{name} is probably a vampire."
 end
 
 # Override other outcomes based on sunshine allergy
-if vamp_identity != "#{name} is very likely a vampire."
+if vamp_identity != "#{name} is probably a vampire."
 # If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
 if age_math && (garlic_bread || insurance)
 	vamp_identity = "#{name} is probably not a vampire"
