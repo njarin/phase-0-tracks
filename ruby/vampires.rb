@@ -3,12 +3,15 @@ puts "How many employees are you processing right now?"
 employees = gets.chomp
 employees = employees.to_i.to_s.to_i
 while employees == 0 or employees == nil
-	puts "I'm sorry, could you enter that as an integer?"
+	puts "I'm sorry, could you try that again? Enter an integer greater than 0."
 	employees = gets.chomp
 	employees = employees.to_i.to_s.to_i
 end
 
 def vamp_questionnaire 
+# Initial vampire status
+vamp_identity = "Results are inconclusive on whether this employee is a vampire."
+
 # Get a name
 puts "What is employee's name?"
 name = gets.chomp
@@ -27,12 +30,18 @@ end
 puts "What year were they born?"
 birth_year = gets.chomp
 birth_year = birth_year.to_i.to_s.to_i
-while birth_year == 0 or birth_year == nil
+while birth_year == 0 or birth_year == nil 
 	puts "I'm sorry, could you enter that as an integer?"
 	birth_year = gets.chomp
 	birth_year = birth_year.to_i.to_s.to_i
 end
 
+# Does age match birth year?
+age_math = (age - (2017 - birth_year))
+if age_math == 0
+	age_math = true
+else age_math = false
+end
 
 # Ask if this person likes garlic bread
 puts "Our cafeteria has garlic bread. Would they like to eat some right now? (yes/no)"
@@ -63,15 +72,20 @@ if insurance.downcase != "yes"
 else insurance = true
 end
 
-# Does age match birth year?
-age_math = (age - (2017 - birth_year))
-if age_math == 0
-	age_math = true
-else age_math = false
+# Ask about allergies
+puts "Please list any allergies you have. Hit return after each one. Enter 'Done' when done listing."
+allergies = gets.chomp
+until allergies.downcase == "done" or vamp_identity = "#{name} is probably a vampire."
+	allergies = gets.chomp
+	if allergies.downcase == "sunshine"
+		vamp_identity = "#{name} is probably a vampire."
+		puts vamp_identity
+	end
 end
 
+# Override other outcomes based on sunshine allergy
+if vamp_identity != "#{name} is probably a vampire."
 # If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
-vamp_identity = "Results are inconclusive on whether #{name} is a vampire."
 if age_math && (garlic_bread || insurance)
 	vamp_identity = "#{name} is probably not a vampire"
 end
@@ -88,18 +102,20 @@ if (age_math == false) && (garlic_bread == false) && (insurance == false)
 	vamp_identity = "#{name} is almost certainly a vampire."
 end
 
+
 # Even if the employee is an amazing liar otherwise, anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. In that case, you should print “Definitely a vampire.”
 
 if (name == "Drake Cula") || (name == "Tu Fang")
 	vamp_identity = "#{name} is definitely a vampire."
 end
-
+end
 puts vamp_identity
 end
 
-puts vamp_questionnaire
-employees = (employees - 1)
-while employees > 0
-	puts vamp_questionnaire
+while employees >= 1
+	vamp_questionnaire
+	employees -= employees
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
