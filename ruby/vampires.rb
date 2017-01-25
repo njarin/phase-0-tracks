@@ -1,9 +1,20 @@
+# How many times do we need to fill out the questionnaire? 
+puts "How many employees are you processing right now?"
+employees = gets.chomp
+employees = employees.to_i.to_s.to_i
+while employees == 0 or employees == nil
+	puts "I'm sorry, could you enter that as an integer?"
+	employees = gets.chomp
+	employees = employees.to_i.to_s.to_i
+end
+
+def vamp_questionnaire 
 # Get a name
-puts "What is your name?"
+puts "What is employee's name?"
 name = gets.chomp
 
 # Get employee age
-puts "How many years old are you?"
+puts "How many years old are they?"
 age = gets.chomp
 age = age.to_i.to_s.to_i
 while age == 0 or age == nil
@@ -13,7 +24,7 @@ while age == 0 or age == nil
 end
 
 # Get employee year of birth
-puts "What year were you born?"
+puts "What year were they born?"
 birth_year = gets.chomp
 birth_year = birth_year.to_i.to_s.to_i
 while birth_year == 0 or birth_year == nil
@@ -24,7 +35,7 @@ end
 
 
 # Ask if this person likes garlic bread
-puts "Our cafeteria has garlic bread. Would you like to eat some right now? (yes/no)"
+puts "Our cafeteria has garlic bread. Would they like to eat some right now? (yes/no)"
 garlic_bread = gets.chomp
 until garlic_bread.downcase == "yes" or garlic_bread.downcase == "no"
 	puts "I'm sorry, give me a yes or no, please."
@@ -39,7 +50,7 @@ end
 
 
 # Ask if they want health insurance
-puts "We have a great healthcare plan. Should we sign you up for health insurance? (yes/no)"
+puts "We have a great healthcare plan. Should we sign them up for health insurance? (yes/no)"
 insurance = gets.chomp
 until insurance.downcase == "yes" or insurance.downcase == "no"
 	puts "I'm sorry, give me a yes or no, please."
@@ -47,9 +58,9 @@ until insurance.downcase == "yes" or insurance.downcase == "no"
 end
 
 # Convert insurance into boolean
-if insurance.downcase == "yes"
-	insurance = true
-else insurance = false
+if insurance.downcase != "yes"
+	insurance = false
+else insurance = true
 end
 
 # Does age match birth year?
@@ -84,3 +95,11 @@ if (name == "Drake Cula") || (name == "Tu Fang")
 end
 
 puts vamp_identity
+end
+
+puts vamp_questionnaire
+employees = (employees - 1)
+while employees > 0
+	puts vamp_questionnaire
+end
+
