@@ -33,16 +33,10 @@ end
 
 # Convert yes/no into boolean
 if garlic_bread.downcase == "yes"
-	garlic_bread == true 
-else garlic_bread == false 
+	garlic_bread = true 
+else garlic_bread = false 
 end
 
-if garlic_bread.downcase == "no"
-	garlic_bread == false
-end
-
-
-p garlic_bread
 
 # Ask if they want health insurance
 puts "We have a great healthcare plan. Should we sign you up for health insurance? (yes/no)"
@@ -54,8 +48,8 @@ end
 
 # Convert insurance into boolean
 if insurance.downcase == "yes"
-	insurance == true
-else insurance == false
+	insurance = true
+else insurance = false
 end
 
 
@@ -63,11 +57,9 @@ end
 # Does age match birth year?
 age_math = (age - (2017 - birth_year))
 if age_math == 0
-	age_math == true
-else age_math == false
+	age_math = true
+else age_math = false
 end
-p age_math
-
 
 
 vamp_identity = "Results inconclusive"
