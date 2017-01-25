@@ -2,8 +2,13 @@
 puts "How many employees are you processing right now?"
 employees = gets.chomp
 employees = employees.to_i.to_s.to_i
-while employees == 0 or employees == nil
+while employees == 0 || employees == nil
 	puts "I'm sorry, could you try that again? Enter an integer greater than 0."
+	employees = gets.chomp
+	employees = employees.to_i.to_s.to_i
+end
+until employees > 0
+	puts "That's not a valid number. Try again."
 	employees = gets.chomp
 	employees = employees.to_i.to_s.to_i
 end
@@ -20,7 +25,7 @@ name = gets.chomp
 puts "How many years old are they?"
 age = gets.chomp
 age = age.to_i.to_s.to_i
-while age == 0 or age == nil
+while age == 0 || age == nil
 	puts "I'm sorry, could you enter that as an integer?"
 	age = gets.chomp
 	age = age.to_i.to_s.to_i
@@ -30,7 +35,7 @@ end
 puts "What year were they born?"
 birth_year = gets.chomp
 birth_year = birth_year.to_i.to_s.to_i
-while birth_year == 0 or birth_year == nil 
+while birth_year == 0 || birth_year == nil 
 	puts "I'm sorry, could you enter that as an integer?"
 	birth_year = gets.chomp
 	birth_year = birth_year.to_i.to_s.to_i
@@ -46,7 +51,7 @@ end
 # Ask if this person likes garlic bread
 puts "Our cafeteria has garlic bread. Would they like to eat some right now? (yes/no)"
 garlic_bread = gets.chomp
-until garlic_bread.downcase == "yes" or garlic_bread.downcase == "no"
+until garlic_bread.downcase == "yes" || garlic_bread.downcase == "no"
 	puts "I'm sorry, give me a yes or no, please."
 	garlic_bread = gets.chomp
 end
@@ -61,7 +66,7 @@ end
 # Ask if they want health insurance
 puts "We have a great healthcare plan. Should we sign them up for health insurance? (yes/no)"
 insurance = gets.chomp
-until insurance.downcase == "yes" or insurance.downcase == "no"
+until insurance.downcase == "yes" || insurance.downcase == "no"
 	puts "I'm sorry, give me a yes or no, please."
 	insurance = gets.chomp
 end
@@ -72,19 +77,24 @@ if insurance.downcase != "yes"
 else insurance = true
 end
 
+#Clear allergies value before asking about it
+allergies = "none"
+if allergies == "sunshine"
+	allergies = 0
+end
+
 # Ask about allergies
 puts "Please list any allergies you have. Hit return after each one. Enter 'Done' when done listing."
 allergies = gets.chomp
-until allergies.downcase == "done" or vamp_identity = "#{name} is probably a vampire."
+until allergies.downcase == "done" || vamp_identity == "#{name} is very likely a vampire."
 	allergies = gets.chomp
 	if allergies.downcase == "sunshine"
-		vamp_identity = "#{name} is probably a vampire."
-		puts vamp_identity
+		vamp_identity = "#{name} is very likely a vampire."
 	end
 end
 
 # Override other outcomes based on sunshine allergy
-if vamp_identity != "#{name} is probably a vampire."
+if vamp_identity != "#{name} is very likely a vampire."
 # If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
 if age_math && (garlic_bread || insurance)
 	vamp_identity = "#{name} is probably not a vampire"
@@ -112,9 +122,9 @@ end
 puts vamp_identity
 end
 
-while employees >= 1
+until employees == 0
 	vamp_questionnaire
-	employees -= employees
+	employees -= 1
 end
 
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
