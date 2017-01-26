@@ -11,6 +11,9 @@ def encrypt(string1)
 	index = 0
 	while index < string1.length
 		string1[index] = string1[index].next
+		if string1[index] == "z"
+			p "found it"
+		end
 		index += 1
 	end
 	puts string1
