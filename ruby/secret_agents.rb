@@ -7,19 +7,23 @@
 # index the word and then apply .next to every indexed character
 
 
-def encrypt(string1)
+def encrypt(password)
 	index = 0
-	while index < string1.length
-		string1[index] = string1[index].next
-		if string1[index] == "z"
-			p "found it"
+	while index < password.length
+		for edge in 0...password.length
+			if password[edge] == "z"
+				password[edge] = "a"
+			else 
+			password[index] = password[index].next
 		end
 		index += 1
+		end
 	end
-	puts string1
+	p password
 end
 
-encrypt("password")
+#encrypt("abc")
+#encrypt("zed")
 
 
 # Decryption
@@ -29,15 +33,39 @@ encrypt("password")
 # Convert index location to alphabet
 # Print result
 
-def decrypt(string2)
+def decrypt(de_password)
 	alpha = "abcdefghijklmnopqrstuvwxyz"
 	index = 0
-	while index < string2.length
-		decrypt_letter = alpha[(alpha.index(string2[index]) - 1)]
-		string2[index] = decrypt_letter
+	while index < de_password.length
+		decrypt_letter = alpha[(alpha.index(de_password[index]) - 1)]
+		de_password[index] = decrypt_letter
 		index += 1
 	end
-	puts string2
+	p de_password
 end
 
-decrypt("pssword")
+#decrypt("bcd")
+#decrypt("afe")
+#decrypt(encrypt("swordfish"))
+
+# Ask secret what they need
+# Control for edge inputs
+# Execute encrypt or decrypt based on input
+# Print result
+
+puts "Do you want to encrypt or decrypt your password? Choose one."
+spy_needs = gets.chomp
+until spy_needs == "encrypt" || spy_needs.downcase == "decrypt"
+	puts "I'm sorry, tell me to 'encrypt' or 'decrypt'."
+	spy_needs = gets.chomp
+end
+
+if spy_needs.downcase == "encrypt"  
+	puts "What is the password?"
+	password = gets.chomp
+	encrypt(password)
+elsif spy_needs.downcase == "decrypt"
+	puts "What is the password?"
+	de_password = gets.chomp
+	decrypt(de_password)
+end
