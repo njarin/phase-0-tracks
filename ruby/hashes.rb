@@ -9,7 +9,7 @@
 
 # Convert any user input to the appropriate data type
 
-#Print the hash out to the screen when the designer has answered all questions
+# Print the hash out to the screen when the designer has answered all questions
 
 
 
@@ -20,6 +20,7 @@ design_profile = {
 	decor_theme: "",
 	pets: false,
 	num_pets: 0,
+	type_pets: ""
 }
 
 puts "Client name:"
@@ -60,11 +61,44 @@ else
 end
 design_profile[:pets] = pets_present
 
+#If pets, how many and what type?
+if pets_present == true
+	puts "Number of pets:"
+	pet_number = gets.chomp
+	while pet_number.to_i.to_s != pet_number
+		puts "Please enter an integer"
+		pet_number = gets.chomp
+	end
+	design_profile[:num_pets] = pet_number
+	
+	puts "Species of pet(s):"
+	pet_species = gets.chomp
+	design_profile[:type_pets] = pet_species
+end
+
+puts design_profile
+puts
 
 
+# Ask if user wants to update any of the inputs. If they do, let them change it. 
+# Give a way to select which value user would like to change by letting them 
+# select a key to change the value of
 
+puts "Would you like to make any changes? (Yes/No)"
+changes = gets.chomp
+until changes.downcase == "yes" || changes.downcase == "no"
+	puts "Please answer 'yes' or 'no'"
+	changes = gets.chomp
+end
 
+if changes.downcase == "yes"
+	puts "What category would you like to change?"
+	cat_change = gets.chomp
+	puts "What would you like to change #{cat_change} to?"
+	edited_response = gets.chomp
+	design_profile[cat_change.to_sym] = edited_response
+end
 
-#p design_profile[:client_age]
-#p design_profile[:client_name]
+#Instructions said not to spend time on control flow for the "edit" portion
+
 puts design_profile
