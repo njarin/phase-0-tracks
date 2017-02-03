@@ -8,13 +8,44 @@
 # consonant in the alphabet. So 'a' would become 'e', 'u' would become 'a', 
 # and 'd' would become 'f'.
 
-agent_name = "Monica Torres"
+agent_name = "Felicia Torres"
 
 # Swap first and last name
 # Turn string into array of first and last name
 # Reverse array
 # Add name back together into a string
-agent_name = agent_name.split(' ').reverse
-agent_name.join(' ')
+agent_alias = agent_name.downcase
+agent_alias = agent_alias.split(' ').reverse
+agent_alias = agent_alias.join(' ')
+agent_alias = agent_alias.split('')
+p agent_name
+p agent_alias
+puts
+# puts
 
-vowels = 'aeiou'
+
+# Change vowels in alias to the next vowel in 'aeiou'
+# Change consonants to the next one
+agent_alias.map! {
+	|letter|
+	letter.next
+	}
+
+# Control for consonants that turned into vowels and force them to skip that vowel. 
+agent_alias = agent_alias.join
+agent_alias.gsub!(/[aeiou]/, 'a' => 'b', 'e' => 'f', 'i' => 'j', 'o' => 'p', 'u' => 'v')
+
+
+p agent_alias
+puts
+
+agent_alias.gsub!(/[bfjpv!]/, 'b' => 'e', 'f' => 'i', 'j' => 'o', 'p' => 'u', 'v' => 'a', '!' => ' ')
+
+p agent_alias
+puts
+
+
+# Correctly capitalize the new alias
+# p agent_alias.split(' ').capitalize.join(' ')
+
+
