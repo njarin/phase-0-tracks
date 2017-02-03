@@ -8,6 +8,13 @@
 # consonant in the alphabet. So 'a' would become 'e', 'u' would become 'a', 
 # and 'd' would become 'f'.
 
-agent_name = 
+agent_name = "Monica Torres"
 
-agent_name = 
+# Swap first and last name
+# Turn string into array of first and last name
+# Reverse array
+# Add name back together into a string
+agent_name = agent_name.split(' ').reverse
+agent_name.join(' ')
+
+vowels = 'aeiou'
