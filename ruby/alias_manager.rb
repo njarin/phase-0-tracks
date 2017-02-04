@@ -45,9 +45,12 @@ loop do
 	agent_name = gets.chomp
 	break if agent_name == 'quit'
 	generated_alias = alias_generator(agent_name)
-	
+	name_storage.store(agent_name, generated_alias)
+	puts generated_alias
 end
 
+puts
+name_storage.each {|real, fake| puts "#{fake} is really #{real}."}
 
 
 
