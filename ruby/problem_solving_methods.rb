@@ -3,27 +3,25 @@
 #Practicing Data Structures!
 
 def search_array(input_array, x)
-  input_array.each {
-  |number| if number == x
-    p x.index
-  end
-    #if input_array[-1] == x
-    #   p input_array[-1]
-    # else p "It's not there."
-    # end
-  }
+	while input_array.length > 0
+  		if input_array.last == x
+  			puts ((input_array.length) -1)
+  		end
+  		input_array.delete(input_array.last)
+  	end
 end
 
 
+# array = [7, 23, 56, 19]
 
+# search_array(array, 19)
 
-#   loop do 
-#     p input_array.delete(input_array.last)
-#   break if input_array.last == x
-#     (input_array.length) - 1
-#   end
-# end
+# Fibonacci Sequence 
 
-array = [7, 23, 56, 19]
+def fib(add_me)
+	starter_array = [0, 1]
+	add_me = add_me - 2
+	add_me.times {starter_array << (starter_array[-1] + starter_array[-2])}
+end
 
-p search_array(array, 7)
+# fib(100)
