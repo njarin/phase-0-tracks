@@ -25,3 +25,34 @@ def fib(add_me)
 end
 
 # fib(100)
+
+
+# BUBBLE SORT IN ASCENDING VALUE
+
+# Start with the first two items in the list
+# Is one item greater than the other one? 
+# Move the greater item to the right of the other one.
+# If items are equal, move to next pair of items
+# Continue through array until all items are either equal to 
+# or less than the item to their right
+# You may have to got through the array multiple times
+
+def bubble_sort(array)
+	n = array.length
+	loop do
+		swapped = false
+		(n-1).times do |item|
+			if array[item] > array[item + 1]
+				array[item], array[item +1] = array[item + 1], array[item]
+			swapped = true
+			end
+		end
+		break if swapped == false
+	end
+	p array
+end
+
+# trial_array = [5, 4, 88, 55, 99, 100, 3, 1, 44, 56, 87, 1, 2, 3, 4, 5, 6]
+
+# bubble_sort(trial_array)
+
