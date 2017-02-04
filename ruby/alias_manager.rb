@@ -38,11 +38,16 @@ def alias_generator(agent_name)
 end
 
 #USER INTERFACE
+name_storage = {}
 
-puts "Please type in name of agent"
-agent_name = gets.chomp
+loop do
+	puts "Please enter name of agent or enter 'quit' to exit"
+	agent_name = gets.chomp
+	break if agent_name == 'quit'
+	generated_alias = alias_generator(agent_name)
+	
+end
 
-puts alias_generator(agent_name)
 
 
 
