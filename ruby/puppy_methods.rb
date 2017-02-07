@@ -24,6 +24,11 @@ class Puppy
   	puts "#{dog_name} is sitting like a dog" 
   end
 
+  def initialize
+  	puts "Initializing new puppy instance..."
+  end
+
+
 end
 
 goober = Puppy.new
