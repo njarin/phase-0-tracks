@@ -1,3 +1,5 @@
+# PAIRING 6.2 WITH DAN McKEON
+
 class Puppy
 
   def fetch(toy)
@@ -6,4 +8,5 @@ class Puppy
   end
 
 end
+
 
