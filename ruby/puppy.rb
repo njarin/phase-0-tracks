@@ -7,6 +7,8 @@ CHARACTERISTICS -------------
 Vertebrate: Yes
 Mammal: Yes
 Legs: 4
+Height: Varies
+Weight: Varies
 Tail length: Varies
 Fur pattern: Varies
 Fur color: Varies
