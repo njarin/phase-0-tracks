@@ -9,13 +9,26 @@ class Santa
 		@age = 0
 	end 
 
-	def about
-		p @gender
-		p @ethnicity
-		p @age
-		p @reindeer_ranking
+	# getter methods
+	def age
+		@age
 	end
 
+	def ethnicity
+		@ethnicity
+	end
+
+	def gender
+		@gender
+	end
+
+	# setter methods 
+	def gender=(reassigned_gender)
+		@gender = reassigned_gender
+		@gender
+	end
+
+	# class methods
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!"
 	end
@@ -24,11 +37,17 @@ class Santa
 		puts "That was a good #{cookie}!"
 	end
 
-end
+	def celebrate_birthday
+		@age += 1
+		@age
+	end
 
-# St_Nick = Santa.new("male", "Filipino American")
-# St_Nick.speak
-# St_Nick.eat_milk_and_cookies("molasses cookie")
+	def get_mad_at(reindeer_name)
+		@reindeer_ranking.delete_if{|reindeer| reindeer == reindeer_name}
+		@reindeer_ranking << reindeer_name
+	end
+
+end
 
 santas = []
 
@@ -38,4 +57,17 @@ ethnicities = ["Ethiopian", "white", "German", "American", "South Asian", "Filip
 genders.length.times { |i|
 	santas << Santa.new(genders[i], ethnicities[i])
 }
+
+# p santas[0].age
+# santas[0].celebrate_birthday
+# p santas[0].age
+
+# santas[0].get_mad_at("Rudolph")
+
+# p santas[1].gender
+# santas[1].gender = "N/A"
+# p santas[1].gender 
+# p santas[3].ethnicity
+
+
 
