@@ -35,23 +35,45 @@ end
 
 santas = []
 
-genders = ["female", "male", "none", "trans", "fluid", "bakla"]
-ethnicities = ["Ethiopian", "white", "German", "American", "South Asian", "Filipino"]
+genders = [
+	"female", 
+	"male", 
+	"none", 
+	"trans", 
+	"fluid", 
+	"bakla", 
+	"N/A"
+]
 
-genders.length.times { |i|
-	santas << Santa.new(genders[i], ethnicities[i])
-}
+ethnicities = [
+	"Ethiopian", 
+	"white", 
+	"German", 
+	"American", 
+	"South Asian", 
+	"Filipino", 
+	"N/A"
+]
 
-p santas[0].age
-santas[0].celebrate_birthday
-p santas[0].age
+# genders.length.times { |i|
+# 	santas << Santa.new(genders[i], ethnicities[i])
+# }
 
-santas[0].get_mad_at("Rudolph")
+# p santas[0].age
+# santas[0].celebrate_birthday
+# p santas[0].age
 
-p santas[1].gender
-santas[1].gender = "N/A"
-p santas[1].gender 
-p santas[3].ethnicity
+# santas[0].get_mad_at("Rudolph")
 
+# p santas[1].gender
+# santas[1].gender = "N/A"
+# p santas[1].gender 
+# p santas[3].ethnicity
+
+
+
+# Create a lot of santas!
+# Need to assign a random gender and ethnicity to each one
+# 
 
 
