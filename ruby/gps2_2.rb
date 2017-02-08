@@ -35,10 +35,44 @@
 
 
 
+def grocery_list(groceries)
+	needed_groceries = {}
+	groceries = groceries.split(' ')
+	groceries.each do |item|
+		needed_groceries[item] = 1
+	end
+	p needed_groceries
+	needed_groceries
+end
 
+def grocery_adder(needed_groceries, grocery_item, quantity = 1)
+	needed_groceries[grocery_item] = quantity
+end
 
+def grocery_deleter(needed_groceries, grocery_item)
+	needed_groceries.delete(grocery_item)
+end
 
+def quantity_update(needed_groceries, grocery_item, new_quantity)
+	needed_groceries[grocery_item] = new_quantity
+end
 
+def pretty_list(needed_groceries)
+	needed_groceries.each do |item, quantity|
+		puts "#{quantity} #{item}"
+	end
+end
 
+list = grocery_list("carrots potatoes chicken pasta")
 
+grocery_adder(list, "noodles", 4)
+grocery_adder(list, "sauce")
+p list
 
+grocery_deleter(list, "noodles")
+p list
+
+quantity_update(list, "carrots", 8)
+p list
+
+pretty_list(list)
