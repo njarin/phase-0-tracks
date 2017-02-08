@@ -30,4 +30,12 @@ end
 # St_Nick.speak
 # St_Nick.eat_milk_and_cookies("molasses cookie")
 
+santas = []
+
+genders = ["female", "male", "none", "trans", "fluid", "bakla"]
+ethnicities = ["Ethiopian", "white", "German", "American", "South Asian", "Filipino"]
+
+genders.length.times { |i|
+	santas << Santa.new(genders[i], ethnicities[i])
+}
 
