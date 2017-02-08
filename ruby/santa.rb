@@ -1,6 +1,9 @@
 # 6.3 Attributes
 
 class Santa
+	attr_reader :ethnicity
+	attr_accessor :gender, :age
+
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance ..."
 		@gender = gender
@@ -8,25 +11,6 @@ class Santa
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		@age = 0
 	end 
-
-	# getter methods
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
-	end
-
-	def gender
-		@gender
-	end
-
-	# setter methods 
-	def gender=(reassigned_gender)
-		@gender = reassigned_gender
-		@gender
-	end
 
 	# class methods
 	def speak
@@ -58,16 +42,16 @@ genders.length.times { |i|
 	santas << Santa.new(genders[i], ethnicities[i])
 }
 
-# p santas[0].age
-# santas[0].celebrate_birthday
-# p santas[0].age
+p santas[0].age
+santas[0].celebrate_birthday
+p santas[0].age
 
-# santas[0].get_mad_at("Rudolph")
+santas[0].get_mad_at("Rudolph")
 
-# p santas[1].gender
-# santas[1].gender = "N/A"
-# p santas[1].gender 
-# p santas[3].ethnicity
+p santas[1].gender
+santas[1].gender = "N/A"
+p santas[1].gender 
+p santas[3].ethnicity
 
 
 
