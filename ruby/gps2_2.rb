@@ -41,8 +41,8 @@ def grocery_list(groceries)
 	groceries.each do |item|
 		needed_groceries[item] = 1
 	end
-	p needed_groceries
-	needed_groceries
+	#p needed_groceries
+	pretty_list(needed_groceries)
 end
 
 def grocery_adder(needed_groceries, grocery_item, quantity = 1)
@@ -63,16 +63,30 @@ def pretty_list(needed_groceries)
 	end
 end
 
-list = grocery_list("carrots potatoes chicken pasta")
+# list = grocery_list("carrots potatoes chicken pasta")
 
-grocery_adder(list, "noodles", 4)
-grocery_adder(list, "sauce")
-p list
+# grocery_adder(list, "noodles", 4)
+# grocery_adder(list, "sauce")
+# p list
 
-grocery_deleter(list, "noodles")
-p list
+# grocery_deleter(list, "noodles")
+# p list
 
-quantity_update(list, "carrots", 8)
-p list
+# quantity_update(list, "carrots", 8)
+# p list
 
-pretty_list(list)
+# pretty_list(list)
+
+list1 = grocery_list('lemonade tomatoes onions ice_cream')
+quantity_update(list1, 'lemonade', 2)
+quantity_update(list1, 'tomatoes', 3)
+quantity_update(list1, 'ice_cream', 4)
+p list1 
+
+grocery_deleter(list1, 'lemonade')
+p list1
+
+quantity_update(list1, 'ice_cream', 1)
+p list1
+
+pretty_list(list1)
