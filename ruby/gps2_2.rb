@@ -90,3 +90,24 @@ quantity_update(list1, 'ice_cream', 1)
 p list1
 
 pretty_list(list1)
+
+=begin 
+What did you learn about pseudocode from working on this challenge?
+	I should be way more explicit when pseudocoding about what I should expect my code to do. I need to be pseudocoding inputs and outputs, along with how I'll get from one to the other.
+
+What are the tradeoffs of using arrays and hashes for this challenge?
+	An array got us to a hash in this challenge. The array could handle a simple list, but not one with quantity values attached to each item in the list. Converting the array into a hash fixed that. 
+
+What does a method return?
+	A method returns whatever is implicitly returned by the code within it. For example, the grocery_list method returned a hash, but did not create one, since that wasn't returned as something that would be created outside the method. 
+
+What kind of things can you pass into methods as arguments?
+	Methods can take in all kinds of data type. It can be a data structure like a hash or array, a string, an integer, a float, or any other class. As long as the method calls on class methods that can be applied to the input data type, it works. 
+
+How can you pass information between methods?
+	Information can be passed between methods by making the returns of the methods exist outside the method. That way, it can be passed into another method as an argument. We did this with the methods that adjusted the list created by that first method. We also have one instance of calling a method inside another one. That's because the parent method returned a data type that matched the parameter of the nested method.
+
+What concepts were solidified in this challenge, and what concepts are still confusing?
+	I feel much better about pseudocoding, how to pass data from one method to another, and how to turn a method return into a varible that exists outside a method. In the past, I think I was trying to do too much within a method. This challenge made it clear how helpful it is to break things up and how pseudocoding can really help make that process clear. I understand now how to make a method return turn into a variable, but it's something that I should spend more time with so that I have a firmer grasp on when and how to do it. Also, how to add and delete things from hashes was a little hazier before than it is now. I wasn't sure if adding a new value would apply to the correct key or simply add a new one. Now I know.
+
+=end
