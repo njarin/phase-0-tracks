@@ -1,7 +1,7 @@
 # 6.3 Attributes
 
 class Santa
-	attr_reader :ethnicity
+	attr_reader :ethnicity, :reindeer_ranking
 	attr_accessor :gender, :age
 
 	def initialize(gender, ethnicity)
@@ -9,7 +9,7 @@ class Santa
 		@gender = gender
 		@ethnicity = ethnicity
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-		@age = 0
+		@age = rand(0..140)
 	end 
 
 	# class methods
@@ -40,9 +40,9 @@ genders = [
 	"male", 
 	"none", 
 	"trans", 
-	"fluid", 
-	"bakla", 
-	"N/A"
+	"fluid",  
+	"N/A",
+	"nonconforming"
 ]
 
 ethnicities = [
@@ -52,28 +52,48 @@ ethnicities = [
 	"American", 
 	"South Asian", 
 	"Filipino", 
-	"N/A"
+	"N/A",
+	"Polish",
+	"Chinese",
+	"Turkish",
+	"Nigerian",
+	"Salvadorian"
 ]
-
-# genders.length.times { |i|
-# 	santas << Santa.new(genders[i], ethnicities[i])
-# }
-
-# p santas[0].age
-# santas[0].celebrate_birthday
-# p santas[0].age
-
-# santas[0].get_mad_at("Rudolph")
-
-# p santas[1].gender
-# santas[1].gender = "N/A"
-# p santas[1].gender 
-# p santas[3].ethnicity
-
-
 
 # Create a lot of santas!
 # Need to assign a random gender and ethnicity to each one
-# 
+
+# Pseudocode
+
+# Code to generate many instances of Santa class
+# input: gender parameter, ethnicity parameter
+# steps:
+	# Create Santa class
+	# Create arrays for gender and ethnicity parameters
+	# Create a new instance of Santa class with random gender and ethnicity
+	# Do this many times
+# output: instances of Santa class
+
+
+
+10000.times {
+	santas << Santa.new(genders.sample, ethnicities.sample)
+}
+
+# test the code 
+
+p santas[9999]
+
+p santas[0].age
+santas[0].celebrate_birthday
+p santas[0].age
+
+santas[0].get_mad_at("Rudolph")
+p santas[0].reindeer_ranking
+
+p santas[1].gender
+santas[1].gender = "N/A"
+p santas[1].gender 
+p santas[3].ethnicity
 
 
