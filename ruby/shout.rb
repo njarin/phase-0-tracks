@@ -32,3 +32,13 @@ end
 class Dragon
 	include Shout
 end
+
+#DRIVER CODE
+
+hero = Dohvahkiin.new
+p hero.fire_breath
+p hero.slow_time
+
+dragon = Dragon.new
+p dragon.fire_breath
+p dragon.slow_time
