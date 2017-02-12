@@ -1,0 +1,50 @@
+PSEUDOCODE FOR A WORD GAME — SOLO CHALLENGE 6.6
+
+One user can enter a word (or phrase, if you would like your game to support that), and another user attempts to guess the word.
+Guesses are limited, and the number of guesses available is related to the length of the word.
+Repeated guesses do not count against the user.
+The guessing player receives continual feedback on the current state of the word. So if the secret word is "unicorn", the user will start out seeing something like "_ _ _ _ _ _ _", which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
+The user should get a congratulatory message if they win, and a taunting message if they lose.
+
+
+Create a class for the word game
+
+Method for inputting the word that will be guessed
+input: string
+steps:
+	Store the secret word 
+output: string
+
+Method for disguising secret word
+input: string
+steps: create a version of the word where all of the characters are replaced with asterisks
+output: string
+
+Method for number of guesses countdown
+input: string
+steps: 
+	Convert input string length into an integer
+	Take away one from the number of guess left for every new input
+	Control for repeated guesses. These don’t count against countdown
+	Until number is equal to 0, the game goes on
+	If number hits 0, the game ends
+output: boolean
+
+Method for guessing the secret word
+input: string, string
+steps: 
+	Take input of a string
+	Control for same number of characters as secret word
+	Compare guess word to secret word
+	Return new version of secret word with letters matched filled in now
+	If all characters match, trigger endgame
+output: string, boolean
+
+Method for endgame message
+input: boolean
+steps: 
+	Check to see if the game is over
+	If game is over… how?
+		If game was won, display winning message
+		If game was lost, display losing message
+output: string
