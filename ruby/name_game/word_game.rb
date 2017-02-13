@@ -138,14 +138,10 @@ end
 puts "Okay Player 1, please enter the word for Player 2 to guess."
 word_to_guess = gets.chomp
 
-# p word_to_guess
-
 until (word_to_guess == word_to_guess.split(" ").join)
 	puts "I'm sorry. Enter a single word please."
 	word_to_guess = gets.chomp
 end
-
-# p word_to_guess
 
 game = WordGame.new(word_to_guess)
 
