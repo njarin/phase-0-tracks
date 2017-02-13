@@ -1,23 +1,109 @@
 PSEUDOCODE FOR A WORD GAME — SOLO CHALLENGE 6.6
 
-One user can enter a word (or phrase, if you would like your game to support that), and another user attempts to guess the word.
-Guesses are limited, and the number of guesses available is related to the length of the word.
-Repeated guesses do not count against the user.
-The guessing player receives continual feedback on the current state of the word. So if the secret word is "unicorn", the user will start out seeing something like "_ _ _ _ _ _ _", which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
-The user should get a congratulatory message if they win, and a taunting message if they lose.
-
-
 Create a class for the word game
+
+Word Game: 
+User 1 inputs a secret word
+User 2 guesses words until they match all letters in the secret word
+	Rules: 
+		Player gets the same number of guesses as there are letters in the word
+		If player guesses a word with some matching letters, they get to know which ones matched
+		A repeated guess doesn't count against number of guesses left
+		Player wins if they match all letters
+		Player loses if they spend all guesses and their guess word isn't the secret word 
+
+Need to create a class with attributes for the secret word, the guess letter, the guessed letters, clue word, turns left
+	Take secret word on initialization
+	Display secret word with letters blanked out
+	Need methods for guessing letters
+		Has this letter been guessed before? 
+		Store guess letter for checking later for doubled up guess
+		Fill in any matching letters between secret word and guess letter
+		Display partially filled-in or still blanked out word 
+	Endgame:
+		If counter hits 0, player loses
+		If clue word == secret word, player wins
+
+
+Method for giving a secret word to guess
+input: string
+steps: 
+	Store the secret word provided during initialization
+output: string
+
+Method checking if guessed letter has been guessed before
+input: string (guess letter), array (guessed letters)
+steps: 
+	Check if guess letter is in guessed letters
+	Return false if letter is not present yet
+	Return true if letter has already been guessed
+output: boolean
+
+Method for adding new guess to previously guessed letters
+input: string, array
+steps: 
+	Add input string as new value in array
+output: array
+
+Method tracking progress word
+input: string (secret word), array (guessed letter)
+steps: 
+	Split secret word into array
+	Keep letter if present in guessed letter array
+	If letter doesn’t match any, turn it into an asterisk
+	Combine letters back into a string
+output: string (progress word)
+
+Method for tracking number of turns left
+input: string (secret word), array (guessed letters)
+steps: 
+	Determine length of secret word
+	Determine number of guessed letters
+	Subtract length of secret word from number of guessed letters
+output: integer (number of turns left)
+
+Method for triggering loss message
+input: integer (number of turns)
+steps: 
+	If number of turns left = 0, display taunting losing message
+output: string (display message)
+
+Method for triggering win message
+input: string (secret word), string (progress word)
+steps: 
+	Does secret word == progress word? 
+	Display winning message if true
+output: string (congratulatory message)
+
+
+
 
 Method for inputting the word that will be guessed
 input: string
 steps:
-	Store the secret word 
+	Store the secret word provided during initialization
 output: string
+
+Method for guessing the secret word
+input: string, string
+steps: 
+	Take input of a string
+	Control for same number of characters as secret word
+	Compare guess word to secret word
+	Return new version of secret word with letters matched filled in now
+output: string
+
+Method for triggering endgame if guess word matches secret word
+input: string, string, 
+steps: 
+	Compare edited guess word to secret word 
+	If they match, spit out endgame trigger 
+output: boolean
 
 Method for disguising secret word
 input: string
 steps: create a version of the word where all of the characters are replaced with asterisks
+	compare guess word to secret word, for all characters that don't match, replace with asterisk
 output: string
 
 Method for number of guesses countdown
@@ -29,16 +115,6 @@ steps:
 	Until number is equal to 0, the game goes on
 	If number hits 0, the game ends
 output: boolean
-
-Method for guessing the secret word
-input: string, string
-steps: 
-	Take input of a string
-	Control for same number of characters as secret word
-	Compare guess word to secret word
-	Return new version of secret word with letters matched filled in now
-	If all characters match, trigger endgame
-output: string, boolean
 
 Method for endgame message
 input: boolean
