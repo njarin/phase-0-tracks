@@ -18,12 +18,10 @@ function reverse(string) {
 	console.log(reversedWord);
 }
 
-(reverse("hello"))
+reverse("terrific")
 
 
-// Print the reversedWord given that some condition is true
-// console.log(reversedWord);
-// if (1 <= 100) {
-// 	console.log(string);
-// 	console.log(reversedWord);
-// }
+// Print reversed word given that some condition is true
+if (1 <= 100) {
+	reverse("horrible")
+}
