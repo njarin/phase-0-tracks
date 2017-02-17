@@ -10,16 +10,18 @@
 // 	return the longest one
 // output: string
 
-function Longest(array_of_strings) {
-	for (var i = 0; i < array_of_strings.length; i++) {
+function longest(array_of_strings) {
+	console.log(array_of_strings.length)
+	for (var i = 0; i < (array_of_strings.length - 1); i++) {
 		var longest_string = ""
 		if (array_of_strings[i].length > array_of_strings[i+1].length) {
 			longest_string = array_of_strings[i];
 		} else if (array_of_strings[i].length < array_of_strings[i+1].length) {
 			longest_string = array_of_strings[i+1];
 		}
-		console.log(longest_string)
 	}
+	console.log(longest_string);
 }
 
-array = ["long phrase","longest phrase","longer phrase"]
+var array = ["long phrase","longest phrase","longer phrase"];
+longest(array);
