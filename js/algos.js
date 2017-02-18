@@ -27,8 +27,8 @@
 	// For the same number of times as the input integer...
 	// 	generate a random string of characters with a random length between 1 and 10
 	// 		need a way to generate a random number 1-10
-	// 		need a way to generate random letters
-	// 		add letters together into a string
+	//	 	select a random letter from a string of the whole alphabet
+	// 		add letters together into an empty string
 	// 	add string to the array
 	// return the array of strings
 // output: array of strings with an array length of the input integer
@@ -70,12 +70,19 @@ function matching(object1, object2) {
 }
 
 function randomArray(listLength) {
-	var array = []
-	for (var i = 0; i < object1Keys.length; i++) {
-
+	var array = [];
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	for (var i = 0; i < listLength; i++) {
+		var randomString = "";
+		var stringLength = Math.floor((Math.random() * 10) + 1);
+		for (var a = 0; a < stringLength; a++) {
+			randomString += alphabet[Math.floor((Math.random() * 25) + 1)];
+			randomString;
+		}
+		array.push(randomString);
 	}
+	console.log(array);
 }
-
 
 
 
@@ -91,6 +98,9 @@ function randomArray(listLength) {
 
 // matching(person1, person2);
 // matching(person1, person3);
+
+randomArray(10);
+
 
 
 
