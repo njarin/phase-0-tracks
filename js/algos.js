@@ -36,7 +36,7 @@
 
 // FUNCTIONS
 
-function longest(arrayOfStrings) {
+function Longest(arrayOfStrings) {
 	for (var i = 0; i < (arrayOfStrings.length - 1); i++) {
 		var longestString = ""
 		if (arrayOfStrings[i].length > arrayOfStrings[i+1].length) {
@@ -45,10 +45,10 @@ function longest(arrayOfStrings) {
 			longestString = arrayOfStrings[i+1];
 		}
 	}
-	console.log(longestString);
+	return longestString;
 }
 
-function matching(object1, object2) {
+function Matching(object1, object2) {
 	var match = false;
 	var object1Keys = Object.keys(object1);
 	var object2Keys = Object.keys(object2);
@@ -69,7 +69,7 @@ function matching(object1, object2) {
 	console.log(match);
 }
 
-function randomArray(listLength) {
+function RandomArray(listLength) {
 	var array = [];
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
 	for (var i = 0; i < listLength; i++) {
@@ -81,26 +81,36 @@ function randomArray(listLength) {
 		}
 		array.push(randomString);
 	}
-	console.log(array);
+	return array;
 }
 
 
 
 // DRIVER CODE
 
-// var testArray = ["long phrase","longest phrase","longer phrase"];
-// longest(testArray);
+var testArray = ["long phrase","longest phrase","longer phrase"];
+console.log(Longest(testArray));
 
 
-// var person1 = {name: "Steven", age: 54};
-// var person2 = {name: "Tamir", age: 54};
-// var person3 = {name: "Pam", age: 5};
+var person1 = {name: "Steven", age: 54};
+var person2 = {name: "Tamir", age: 54};
+var person3 = {name: "Pam", age: 5};
 
-// matching(person1, person2);
-// matching(person1, person3);
+Matching(person1, person2);
+Matching(person1, person3);
 
-randomArray(10);
 
+
+// Add driver code that does the following 10 times:
+// generates an array, prints the array, feeds the array to your 
+// "longest word" function, and prints the result.
+
+for (var i = 0; i < 10; i++) {
+	var arrayTest = RandomArray(4);
+	console.log(arrayTest);
+	var longestWord = Longest(arrayTest);
+	console.log(longestWord);
+}
 
 
 
