@@ -20,47 +20,77 @@
 	// if any do, return true
 // output: boolean
 
+// Function for generating random data 
+// input: integer
+// steps: 
+	// Declare an empty array to fill
+	// For the same number of times as the input integer...
+	// 	generate a random string of characters with a random length between 1 and 10
+	// 		need a way to generate a random number 1-10
+	// 		need a way to generate random letters
+	// 		add letters together into a string
+	// 	add string to the array
+	// return the array of strings
+// output: array of strings with an array length of the input integer
+
 
 // FUNCTIONS
 
-function longest(array_of_strings) {
-	for (var i = 0; i < (array_of_strings.length - 1); i++) {
-		var longest_string = ""
-		if (array_of_strings[i].length > array_of_strings[i+1].length) {
-			longest_string = array_of_strings[i];
-		} else if (array_of_strings[i].length < array_of_strings[i+1].length) {
-			longest_string = array_of_strings[i+1];
+function longest(arrayOfStrings) {
+	for (var i = 0; i < (arrayOfStrings.length - 1); i++) {
+		var longestString = ""
+		if (arrayOfStrings[i].length > arrayOfStrings[i+1].length) {
+			longestString = arrayOfStrings[i];
+		} else if (arrayOfStrings[i].length < arrayOfStrings[i+1].length) {
+			longestString = arrayOfStrings[i+1];
 		}
 	}
-	console.log(longest_string);
+	console.log(longestString);
 }
 
 function matching(object1, object2) {
-	for (var i = 0; i < object1.length; i++) {
-		if Object.keys(object1)
+	var match = false;
+	var object1Keys = Object.keys(object1);
+	var object2Keys = Object.keys(object2);
+	var object1Values = Object.values(object1);
+	var object2Values = Object.values(object2);
+	// console.log(object1Keys);
+	for (var i = 0; i < object1Keys.length; i++) {
+		if (object1Keys[i] == object2Keys[i]) {
+			// console.log(object1Keys[i]);
+			for (var a = 0; a < object1Keys.length; a++) {
+				if (object1Values[i] == object2Values[a]) {
+					match = true;
+				}
+			}
+		}
+		match;
 	}
-
+	console.log(match);
 }
+
+function randomArray(listLength) {
+	var array = []
+	for (var i = 0; i < object1Keys.length; i++) {
+
+	}
+}
+
+
 
 
 // DRIVER CODE
 
-// var array = ["long phrase","longest phrase","longer phrase"];
-// longest(array);
+// var testArray = ["long phrase","longest phrase","longer phrase"];
+// longest(testArray);
+
+
+// var person1 = {name: "Steven", age: 54};
+// var person2 = {name: "Tamir", age: 54};
+// var person3 = {name: "Pam", age: 5};
+
+// matching(person1, person2);
+// matching(person1, person3);
 
 
 
-var person1 = {name: "Steven", age: 54};
-var person2 = {name: "Tamir", age: 54};
-var person3 = {name: "Pam", age: 5};
-
-matching(person1, person2);
-
-// console.log(Object.keys(person1));
-
-// if (Object.keys(person1) == Object.keys(person2)) {
-// 	console.log(person2);
-// }
-
-// console.log(Object.keys(person1)[0] == Object.keys(person2)[0]);
-// console.log(Object.values(person3))
