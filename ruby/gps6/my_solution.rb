@@ -59,14 +59,22 @@ class VirusPredictor
     # by additional factors we haven't added into this functionality.
     speed = 0.0
 
-    if @population_density >= 200
+    # if @population_density >= 200
+    #   speed += 0.5
+    # elsif @population_density >= 150
+    #   speed += 1
+    # elsif @population_density >= 100
+    #   speed += 1.5
+    # elsif @population_density >= 50
+    #   speed += 2
+    # else
+    #   speed += 2.5
+    # end
+
+    if (@population_density >= 50) && (@population_density <= 200) 
+      speed += (2.5 - (@population_density / 100).floor)
+    elsif @population_density > 200
       speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
     else
       speed += 2.5
     end
