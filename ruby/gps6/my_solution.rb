@@ -113,3 +113,18 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  # One is using a string as the key, the other is using a symbol.
+
+# What does require_relative do? How is it different from require?
+  # Require_relative links a file located locally or in the same directory to the the one where the method is called. 
+
+# What are some ways to iterate through a hash?
+  #each, #map, and combining #length with #times are a few ways to iterate through a hash. 
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+  # They could be accessed anywhere within the class. They didn't need to be fed into the class methods that used them. 
+
+# What concept did you most solidify in this challenge?
+  # I wasn't aware of constants before, such as STATE_DATA. That's a really great feature that I can see myself using in the future, for sure. 
