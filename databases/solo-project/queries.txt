@@ -1,5 +1,8 @@
 SOLO CHALLENGE 8.3 
 
+
+RELEASE 2: Execute SQL Queries
+
 1. Display the information in one table (either table is fine).
 
 COMMAND:
@@ -11,6 +14,7 @@ OUTPUT:
 3|15|Bruno Mars|24K Magic|1|true
 4|19|Shawn Mendes|Mercy|1|false
 
+——————————————
 
 2. Update an item that meets some condition (you can choose a condition that makes sense).
 
@@ -19,6 +23,8 @@ sqlite> UPDATE songs SET position=1 WHERE track="Bad and Boujee";
 
 OUTPUT: 
 (Nothing was output.)
+
+——————————————
 
 3. Display the information in both tables using one query.
 
@@ -32,6 +38,7 @@ OUTPUT:
 19|Shawn Mendes|Mercy|Pop|false
 
 
+——————————————
 
 4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
 
@@ -44,7 +51,7 @@ Big Sean|Hip Hop
 Bruno Mars|Pop
 Shawn Mendes|Pop
 
-
+——————————————
 
 5. Delete an item that meets some condition (you can choose a condition that makes sense).
 
@@ -53,3 +60,33 @@ sqlite> DELETE FROM songs WHERE artist="Big Sean";
 
 OUTPUT: 
 (Nothing was output.)
+
+=================================
+
+RELEASE 3: Research on Your Own
+
+I tried INNER JOIN…
+
+COMMAND: 
+sqlite> SELECT songs.track, genres.genre FROM songs INNER JOIN genres ON songs.genre_id = genres.id;
+
+OUTPUT:
+Bad and Boujee|Hip Hop
+24K Magic|Pop
+Mercy|Pop
+
+I tried FULL JOIN, which apparently doesn’t work in sqlite3…
+
+COMMAND:
+sqlite> SELECT songs, genres FROM songs FULL JOIN genres ON songs.genre_id = genres.id;
+
+OUTPUT:
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+I tried LEFT JOIN, which returned no matching columns. 
+
+COMMAND: 
+sqlite> SELECT songs, genres FROM songs LEFT JOIN genres ON songs.genre_id = genres.id;
+
+OUTPUT:
+Error: no such column: songs
