@@ -41,13 +41,15 @@ require 'sqlite3'
 family_birthdays = SQLite3::Database.new("birthdays.db")
 family_birthdays.results_as_hash = true
 
-# create_table_cmd = <<-SQL
-#   CREATE TABLE IF NOT EXISTS birthdays(
-#     id INTEGER PRIMARY KEY,
-#     name VARCHAR(255),
-#     birthday VARCHAR(255)
-#   )
-# SQL
+create_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS birthdays(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+    birthday VARCHAR(255)
+  )
+SQL
+
+family_birthdays.execute(create_table_cmd)
 
 # initial values
 
