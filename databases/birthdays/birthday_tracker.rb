@@ -51,9 +51,30 @@ SQL
 
 family_birthdays.execute(create_table_cmd)
 
-# initial values
+def add_family_member(database, new_name, birthdate)
+	new_member = <<-SQL
+		INSERT INTO birthdays (name, birthday) VALUES (?, ?)
+	SQL
+	database.execute(new_member, [new_name, birthdate])
+end
 
+# initial family members added to database
+# add_family_member(family_birthdays, "Eugene", "January 1, 1936")
+# add_family_member(family_birthdays, "MaryAnna", "February 18, 1928")
+# add_family_member(family_birthdays, "Anne", "September 23, 1954")
+# add_family_member(family_birthdays, "Tom", "October 2, 1955")
 
+def print_bdays(database)
+	friendly_print = <<-SQL
+		SELECT birthdays.name, birthdays.birthday FROM birthdays
+	SQL
+	family_bdays = database.execute(friendly_print)
+	family_bdays.each do |family_member|
+		puts "#{family_member["name"]} -- #{family_member["birthday"]}"
+	end
+end
+
+print_bdays(family_birthdays)
 
 
 # USER INTERFACE
