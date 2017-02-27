@@ -34,7 +34,7 @@
 # input: database
 # steps: 
 	# pass a line of code into the SQL that will select only names and birthdays and print them
-# output: printed message
+# output: printed message (so it would be a nil return in rspec)
 
 require 'sqlite3'
 
@@ -58,7 +58,7 @@ def add_family_member(database, new_name, birthdate)
 	database.execute(new_member, [new_name, birthdate])
 end
 
-# initial family members added to database
+# initial family members added to database (already ran these so I commented them out)
 # add_family_member(family_birthdays, "Eugene", "January 1, 1936")
 # add_family_member(family_birthdays, "MaryAnna", "February 18, 1928")
 # add_family_member(family_birthdays, "Anne", "September 23, 1954")
@@ -74,12 +74,42 @@ def print_bdays(database)
 	end
 end
 
-print_bdays(family_birthdays)
-
-
 # USER INTERFACE
 
 # On running program...
 # Prompt: What would you like to do? View birthdays or add birthday?
+
+puts "What would like to do? View birthdays or add a new birthday? Please enter 'view' or 'add'."
+user_choice = gets.chomp
+until user_choice.downcase == 'view' || user_choice.downcase == 'add'
+	puts "Please enter 'view' or 'add'."
+	user_choice = gets.chomp
+end
+
+if user_choice.downcase == 'view'
+	puts "Here's a list of every family member and their birthday..."
+	print_bdays(family_birthdays)
+end
+
+if user_choice == 'add'
+	puts "What is the family member's name?"
+	new_name = gets.chomp
+	puts "What is their birthday?"
+	birthdate = gets.chomp
+	add_family_member(family_birthdays, new_name, birthdate)
+
+	puts "Would you like to view the updated list? (yes/no)"
+	view_update = gets.chomp
+	until view_update.downcase == 'yes' || view_update.downcase == 'no'
+		puts "Please enter 'yes' or 'no'."
+		view_update = gets.chomp
+	end
+	if view_update == 'yes'
+		print_bdays(family_birthdays)
+	else
+		puts "Thanks!"
+	end
+
+end
 
 
