@@ -43,6 +43,12 @@
 	# pass a line of code into the SQL that will update info 
 # output: database (with edited info)
 
+# Method for checking to see if a name is in the database
+# input: database, string
+# steps:
+
+# output: boolean
+
 require 'sqlite3'
 
 family_birthdays = SQLite3::Database.new("birthdays.db")
@@ -88,11 +94,19 @@ def update_bday(database, family_member_name, updated_bday)
 	database.execute(fix_bday, [updated_bday, family_member_name])
 end
 
+def is_name(database, family_member_name)
+	database.results_as_hash = false
+	name_cmd = <<-SQL
+		SELECT name FROM birthdays;
+	SQL
+	name_list = database.execute(name_cmd)
+	name_list.flatten!
+	name_list.include?(family_member_name)
+end
+
+
 
 # USER INTERFACE
-
-# On running program...
-# Prompt: What would you like to do? View birthdays or add birthday?
 
 puts "What would like to do? View birthdays, add a new birthday, or update a birthday? Please enter 'view', 'add', or 'update'."
 user_choice = gets.chomp
@@ -130,6 +144,11 @@ if user_choice == 'update'
 	puts "Which family member would you like to change the birthday for?"
 	up_name = gets.chomp
 	# control for names that aren't in the database's table
+	until is_name(family_birthdays, up_name)
+		puts "Please enter a name of a family member already in the database."
+		up_name = gets.chomp
+	end
+
 
 
 end
