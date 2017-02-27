@@ -101,9 +101,24 @@ def is_name(database, family_member_name)
 	SQL
 	name_list = database.execute(name_cmd)
 	name_list.flatten!
-	name_list.include?(family_member_name)
+	name_exist = name_list.include?(family_member_name)
+	database.results_as_hash = true
+	name_exist
 end
 
+def view_update_prompt(database)
+	puts "Would you like to view the updated list? (yes/no)"
+	view_update = gets.chomp
+	until view_update.downcase == 'yes' || view_update.downcase == 'no'
+		puts "Please enter 'yes' or 'no'."
+		view_update = gets.chomp
+	end
+	if view_update == 'yes'
+		print_bdays(database)
+	else
+		puts "Thanks!"
+	end
+end
 
 
 # USER INTERFACE
@@ -126,18 +141,7 @@ if user_choice == 'add'
 	puts "What is their birthday?"
 	birthdate = gets.chomp
 	add_family_member(family_birthdays, new_name, birthdate)
-
-	puts "Would you like to view the updated list? (yes/no)"
-	view_update = gets.chomp
-	until view_update.downcase == 'yes' || view_update.downcase == 'no'
-		puts "Please enter 'yes' or 'no'."
-		view_update = gets.chomp
-	end
-	if view_update == 'yes'
-		print_bdays(family_birthdays)
-	else
-		puts "Thanks!"
-	end
+	view_update_prompt(family_birthdays)
 end
 
 if user_choice == 'update'
@@ -148,8 +152,9 @@ if user_choice == 'update'
 		puts "Please enter a name of a family member already in the database."
 		up_name = gets.chomp
 	end
-
-
-
+	puts "What would you like to change the date to?"
+	up_date = gets.chomp
+	update_bday(family_birthdays, up_name, up_date)
+	view_update_prompt(family_birthdays)
 end
 
