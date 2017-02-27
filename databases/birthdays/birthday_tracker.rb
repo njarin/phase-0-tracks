@@ -5,7 +5,8 @@
 	# Maintain a database of family members' birthdays
 	# User can add a new family member's birthday to the database 
 	# User can view birthdays in a user-friendly printout
-	# Optional: could be a piece of a larger project that includes a database that groups
+	# Optional: User can update birthdates in case they made a mistake during input
+	# Optional (really ambitious): could be a piece of a larger project that includes a database that groups
 		# family members together in a similar way to a family tree (junction table?)
 
 # PSEUDOCODE 
@@ -35,6 +36,12 @@
 # steps: 
 	# pass a line of code into the SQL that will select only names and birthdays and print them
 # output: printed message (so it would be a nil return in rspec)
+
+# Method for updating birthday
+# input: database, string(person's name) string(corrected birthday)
+# steps: 
+	# pass a line of code into the SQL that will update info 
+# output: database (with edited info)
 
 require 'sqlite3'
 
@@ -73,6 +80,14 @@ def print_bdays(database)
 		puts "#{family_member["name"]} -- #{family_member["birthday"]}"
 	end
 end
+
+def update_bday(database, family_member_name, updated_bday)
+	fix_bday = <<-SQL
+		UPDATE birthdays SET birthday=? WHERE name=?
+	SQL
+	database.execute(fix_bday, [updated_bday, family_member_name])
+end
+
 
 # USER INTERFACE
 
