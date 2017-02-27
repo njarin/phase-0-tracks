@@ -94,10 +94,10 @@ end
 # On running program...
 # Prompt: What would you like to do? View birthdays or add birthday?
 
-puts "What would like to do? View birthdays or add a new birthday? Please enter 'view' or 'add'."
+puts "What would like to do? View birthdays, add a new birthday, or update a birthday? Please enter 'view', 'add', or 'update'."
 user_choice = gets.chomp
-until user_choice.downcase == 'view' || user_choice.downcase == 'add'
-	puts "Please enter 'view' or 'add'."
+until user_choice.downcase == 'view' || user_choice.downcase == 'add' || user_choice.downcase == 'update'
+	puts "Please enter 'view', 'add', or 'update'."
 	user_choice = gets.chomp
 end
 
@@ -124,7 +124,13 @@ if user_choice == 'add'
 	else
 		puts "Thanks!"
 	end
-
 end
 
+if user_choice == 'update'
+	puts "Which family member would you like to change the birthday for?"
+	up_name = gets.chomp
+	# control for names that aren't in the database's table
+
+
+end
 
