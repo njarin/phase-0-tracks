@@ -1,0 +1,13 @@
+Birthday Tracker project outline
+
+-Write requirements for program
+-Pseudocode how to make a program with those requirements
+-Write rspec tests for the pseudocoded methods (maybe skip this since I’m not working with a new class?)
+-Write code for program
+-Test code
+-Debug
+-Refactor
+-Add optional features if time permits
+
+
+-Git workflow ALL THE TIME
