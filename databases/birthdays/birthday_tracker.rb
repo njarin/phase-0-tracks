@@ -5,7 +5,7 @@
 	# Maintain a database of family members' birthdays
 	# User can add a new family member's birthday to the database 
 	# User can view birthdays in a user-friendly printout
-	# Optional: User can update birthdates in case they made a mistake during input
+	# User can update birthdates in case they made a mistake during input
 	# Optional (really ambitious): could be a piece of a larger project that includes a database that groups
 		# family members together in a similar way to a family tree (junction table?)
 
@@ -46,7 +46,10 @@
 # Method for checking to see if a name is in the database
 # input: database, string
 # steps:
-
+	# turn table data into a nested array instead of nested hashes in an array
+	# flatten array
+	# use #include? to see if name is present in flattened array of names
+	# turn table data back into nested hashes
 # output: boolean
 
 require 'sqlite3'
@@ -70,12 +73,6 @@ def add_family_member(database, new_name, birthdate)
 	SQL
 	database.execute(new_member, [new_name, birthdate])
 end
-
-# initial family members added to database (already ran these so I commented them out)
-# add_family_member(family_birthdays, "Eugene", "January 1, 1936")
-# add_family_member(family_birthdays, "MaryAnna", "February 18, 1928")
-# add_family_member(family_birthdays, "Anne", "September 23, 1954")
-# add_family_member(family_birthdays, "Tom", "October 2, 1955")
 
 def print_bdays(database)
 	friendly_print = <<-SQL
