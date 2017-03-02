@@ -17,6 +17,33 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/students/findbyid' do
+	check_id = params[:id]
+	if check_id
+		# "Student found!"
+		@student_id = db.execute("SELECT * FROM students WHERE id=?", [params['id']])
+		"Name: #{@student_id[0]['name']}<br>
+		Age: #{@student_id[0]['age']}<br>"
+		# "#{@student_id}"
+	else
+		erb :student_id
+	end
+
+	# redirect '/students/idresult'
+	# id = params[:id]
+	# @id_student = db.execute("SELECT * FROM students")
+end
+
+# get '/students/idresult' do
+# 	erb :student_idresult
+# 	# redirect '/students/idresult'
+# end
+
+# get '/students/idresult' do
+# 	db.execute("SELECT * FROM students")
+# 	# @student = db.execute("SELECT * FROM students WHERE id=[params[:id]]")
+# end
+
 # create new students via
 # a form
 post '/students' do
