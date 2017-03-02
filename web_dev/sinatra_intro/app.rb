@@ -45,3 +45,10 @@ get '/students/:id' do
   student.to_s
 end
 
+# add a GET route for /contact that displays an address
+
+get '/contact' do
+  "111 First Avenue <br>"
+  "Seattle, WA, 98101<br><br>"
+end
+
