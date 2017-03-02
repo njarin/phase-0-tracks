@@ -48,7 +48,19 @@ end
 # add a GET route for /contact that displays an address
 
 get '/contact' do
-  "111 First Avenue <br>"
-  "Seattle, WA, 98101<br><br>"
+  "111 First Avenue <br>
+  Seattle, WA, 98101<br><br>"
+end
+
+# create a /great_job route that can take a person's name as a parameter
+# and display "Great job, name!" or just "Great job!" if no name provided
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Great job, #{name}!"
+  else
+    "Great job!"
+  end
 end
 
