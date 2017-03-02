@@ -54,13 +54,22 @@ end
 
 # create a /great_job route that can take a person's name as a parameter
 # and display "Great job, name!" or just "Great job!" if no name provided
+# name should be a query parameter
 
 get '/great_job' do
   name = params[:name]
   if name
-    "Great job, #{name}!"
+    "Good job, #{name}!"
   else
-    "Great job!"
+    "Good job!"
   end
 end
 
+# write a route that uses route parameters to add two numbers and respond with the result.
+
+get '/add/:numberA/:numberB' do
+  a = params[:numberA]
+  b = params[:numberB]
+  sum = a.to_i + b.to_i
+  sum.to_s
+end
